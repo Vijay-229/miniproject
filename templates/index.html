@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <link rel="stylesheet" href="{% static 'home.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+        {% if messages %}
+<div>
+    {% for message in messages %}
+    <p style="color:red;">* {{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+        <nav>
+        <div>
+        <img src="{% static 'logo.jpg' %}" alt="Logo">
+       </div>
+       <div class="col">
+        <ul class="home">
+          <li><a href=""><i style="font-size:20px" class="fa fa-home"></i> Home</a></li>
+          <li><a href="" id="about-link"><i style="font-size:20px" class="fa fa-info-circle"></i> About</a></li>
+        </ul>
+    </div>
+    </nav>
+      <div class="home-text">
+          <p class="heading1">Make your shopping easY!</p>
+          <p class="heading2">Compare prices of your favorite products.</p>
+      </div>
+  <div class="search">
+          <form action="result" method="get">
+            <div class="search-container">
+            <i class="fa fa-search custom-size"></i>
+            <input type="text" placeholder="Enter product name..." name="name">
+            <button type="submit" class="search-button">Search</button>
+            </div>
+        </form>
+    </div>
+  </body>
+</html>

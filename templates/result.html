@@ -1,0 +1,89 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+    <link rel="stylesheet" href="{% static 'result.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div>
+      <img src="{% static 'logo.jpg' %}" alt="Logo">
+     </div>
+     <div class="col">
+      <ul class="home">
+        <li><a href=""><i style="font-size:20px" class="fa fa-home"></i> Home</a></li>
+        <li><a href="" id="about-link"><i style="font-size:20px" class="fa fa-info-circle"></i> About</a></li>
+      </ul>
+  </div>
+  </nav>
+    <div class="search">
+      <form action="result">
+        <div class="search-container">
+          <i class="fa fa-search custom-size"></i>
+          <input type="text" placeholder="Enter product name" name="name" />
+          <button type="submit" class="search-button">Search</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get("q");
+      if (query) {
+        document.querySelector(".search-input").value = query;
+        performSearch(query);
+      }
+      function performSearch(searchQuery) {
+        const productsContainer = document.querySelector(".products-container");
+        productsContainer.innerHTML = "";
+      }
+    </script>
+
+    <div class="products-container">
+      <div><div>
+      <img src="{% static 'fp_logo.png' %}"/>
+    </div>
+        <div class="products{% if recomendation %} products2{% endif %}">
+            <img
+              class="picture"
+              src="{{fimage}}"
+              alt="flipkart-product"
+              class="prod"
+
+            />
+            <p class="name">{{fname}}</p>
+            <p class="price">{{fprice}}</p>
+            <p class="rating">{{frating}}<span class="fa fa-star checked"></span></p>
+        </div>
+        <div class="buy-now-container">
+          <a href="{{flink}}" target="_blank" class="buy-now-button">Buy Now</a>
+        </div>
+      </div>
+      <div>
+        <div>
+      <img src="{% static 'amz_logo.png' %}" class="logo"/>
+    </div>
+        <div class="products{% if not recomendation %} products2{% endif %}">
+          <img
+            class="picture"
+            src="{{aimage}}"
+            alt="amazon-product"
+            class="prod"
+
+          />
+          <p class="name">{{aname}}</p>
+          <p class="price">&#x20B9;{{aprice}}</p>
+          <p class="rating">{{arating}}<span class="fa fa-star checked"></span></p>
+        </div>
+        <div class="buy-now-container">
+          <a href="{{alink}}" target="_blank" class="buy-now-button">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
