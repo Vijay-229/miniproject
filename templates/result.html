@@ -68,7 +68,7 @@
         <div>
       <img src="{% static 'amz_logo.png' %}" class="logo"/>
     </div>
-        <div class="products{% if not recomendation %} products2{% endif %}">
+        <div class="products{% if recomendation is False %} products2{% endif %}">
           <img
             class="picture"
             src="{{aimage}}"
