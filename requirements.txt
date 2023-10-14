@@ -24,7 +24,7 @@ h2==4.1.0
 helium==3.0.9
 hpack==4.0.0
 html5lib==1.1
-http2client==0.1.0
+http2client==0.0.4
 hyperframe==6.0.1
 idna==3.4
 importlib-metadata==6.6.0
