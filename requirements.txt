@@ -12,7 +12,7 @@ cryptography==40.0.2
 cssselect==1.2.0
 cycler==0.11.0
 distlib==0.3.6
-Django==4.2.2
+Django==3.2.22
 et-xmlfile==1.1.0
 exceptiongroup==1.1.1
 fake-useragent==1.1.3
