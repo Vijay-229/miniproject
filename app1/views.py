@@ -68,7 +68,7 @@ def optimal(fprice, frating, aprice, arating):
         if rating2 >= rating1:
             return False
         else:
-            print((price1 / rating1) >= (price2 / rating2))
+            return (price1 / rating1) >= (price2 / rating2)
 
 
 def Flipkart(search_query):
